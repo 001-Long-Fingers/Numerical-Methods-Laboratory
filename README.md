@@ -1,15 +1,21 @@
-# Numerical Methods Laboratory
+<div align="center">
 
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
+│          N U M E R I C A L   M E T H O D S   L A B O R A T O R Y  │
+│                                                                     │
+│     numerical analysis · scientific computing · physics sims        │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
 *A virtual laboratory for numerical analysis, scientific computing, mathematical experimentation, and physics simulations.*
-
-<img width="1308" height="736" alt="Pic" src="https://github.com/user-attachments/assets/ee7df7b1-35e0-4442-abeb-0d3b57ac254b" />
-
 
 </div>
 
 ---
 
-## Overview
+## `[ 01 ]` Overview
 
 The **Numerical Methods Laboratory** is an ongoing project aimed at creating a comprehensive computational environment for exploring, implementing, and visualizing numerical methods used throughout mathematics, physics, engineering, and scientific research.
 
@@ -19,185 +25,186 @@ By combining mathematical theory, computational algorithms, interactive visualiz
 
 ---
 
-## Vision
+## `[ 02 ]` Vision
 
 Many scientific and mathematical problems cannot be solved analytically and instead rely on numerical approximations.
 
 This laboratory aims to provide a unified framework where users can:
 
-* Explore numerical algorithms from first principles.
-* Compare multiple solution methods for the same problem.
-* Measure approximation errors and deviations from exact solutions.
-* Visualize convergence, stability, and computational performance.
-* Perform simulations of physical and mathematical systems.
-* Develop intuition for the strengths and limitations of numerical techniques.
-* Rapidly prototype computational approaches for research problems.
+| # | Capability |
+|---|------------|
+| → | Explore numerical algorithms from first principles |
+| → | Compare multiple solution methods for the same problem |
+| → | Measure approximation errors and deviations from exact solutions |
+| → | Visualize convergence, stability, and computational performance |
+| → | Perform simulations of physical and mathematical systems |
+| → | Develop intuition for the strengths and limitations of numerical techniques |
+| → | Rapidly prototype computational approaches for research problems |
 
 The long-term goal is to create a platform that functions as a computational companion to traditional laboratory work and mathematical research.
 
 ---
 
-## Intended Applications
+## `[ 03 ]` Intended Applications
 
-### For Experimentalists
+### ◈ For Experimentalists
 
 Experimental investigations often require computational support for:
 
-* Data analysis
-* Error estimation
-* Curve fitting
-* Numerical integration
-* Statistical analysis
-* Simulation of theoretical models
+```
+  data analysis          ·  error estimation     ·  curve fitting
+  numerical integration  ·  statistical analysis  ·  simulation of theoretical models
+```
 
 This laboratory aims to provide tools that allow experimental results to be compared directly against computational predictions while quantifying deviations and uncertainties.
 
 ---
 
-### For Mathematicians
+### ◈ For Mathematicians
 
 The repository serves as a computational toolkit for exploring:
 
-* Linear algebraic systems
-* Numerical approximations
-* Root-finding techniques
-* Differential equations
-* Probability distributions
-* Optimization problems
-* Computational analysis
+```
+  linear algebraic systems   ·  numerical approximations   ·  root-finding techniques
+  differential equations     ·  probability distributions  ·  optimization problems
+  computational analysis
+```
 
 By automating repetitive calculations and providing visual insight into algorithmic behavior, researchers can focus more effectively on theoretical investigations.
 
 ---
 
-### For Physicists
+### ◈ For Physicists
 
 Many physical systems are governed by equations that possess no closed-form solutions.
 
 The Numerical Methods Laboratory aims to support simulations involving:
 
-* Classical mechanics
-* Orbital dynamics
-* N-body systems
-* Chaotic systems
-* Statistical mechanics
-* Dynamical systems
-* Wave phenomena
+```
+  classical mechanics  ·  orbital dynamics    ·  n-body systems
+  chaotic systems      ·  statistical mech.   ·  dynamical systems
+  wave phenomena
+```
 
 through robust numerical techniques and computational experimentation.
 
 ---
 
-## Repository Architecture
+## `[ 04 ]` Repository Architecture
 
 Each numerical method is organized as a self-contained module containing:
 
-* Mathematical background
-* Algorithmic description
-* Prototype implementation
-* Interactive simulation tools
-* Examples and test cases
-* Performance and accuracy analysis
+- Mathematical background
+- Algorithmic description
+- Prototype implementation
+- Interactive simulation tools
+- Examples and test cases
+- Performance and accuracy analysis
 
 The repository distinguishes between:
 
-### Prototype Implementations
-
-Focused on algorithmic clarity and educational value.
-
-These implementations prioritize transparency and mathematical understanding.
-
-### Simulation Modules
-
-Focused on usability and experimentation.
-
-These modules provide graphical interfaces, visualization tools, and interactive environments for exploring the behavior of numerical methods.
+| Module Type | Focus |
+|-------------|-------|
+| **Prototype Implementations** | Algorithmic clarity and educational value. These implementations prioritize transparency and mathematical understanding. |
+| **Simulation Modules** | Usability and experimentation. These modules provide graphical interfaces, visualization tools, and interactive environments for exploring the behavior of numerical methods. |
 
 ---
 
-## Current Development
+## `[ 05 ]` Current Development
 
 ### Linear Algebra
 
-* Gaussian Elimination
+```
+  ● Gaussian Elimination                                         [ RELEASED ]
+```
 
 ---
 
-## Work In Progress
+## `[ 06 ]` Work In Progress
 
 ### Linear Algebra
-
-* LU Decomposition
-* QR Decomposition
-* Matrix Factorization Techniques
-* Eigenvalue Solvers
-* Power Iteration Methods
+```
+  ○ LU Decomposition
+  ○ QR Decomposition
+  ○ Matrix Factorization Techniques
+  ○ Eigenvalue Solvers
+  ○ Power Iteration Methods
+```
 
 ### Root Finding
-
-* Bisection Method
-* Newton-Raphson Method
-* Secant Method
-* Fixed Point Iteration
+```
+  ○ Bisection Method
+  ○ Newton-Raphson Method
+  ○ Secant Method
+  ○ Fixed Point Iteration
+```
 
 ### Numerical Integration
-
-* Trapezoidal Rule
-* Simpson's Rule
-* Monte Carlo Integration
-* Adaptive Quadrature
+```
+  ○ Trapezoidal Rule
+  ○ Simpson's Rule
+  ○ Monte Carlo Integration
+  ○ Adaptive Quadrature
+```
 
 ### Differential Equations
-
-* Euler Method
-* Improved Euler Method
-* Runge-Kutta Methods (RK4)
-* Velocity Verlet Integration
+```
+  ○ Euler Method
+  ○ Improved Euler Method
+  ○ Runge-Kutta Methods (RK4)
+  ○ Velocity Verlet Integration
+```
 
 ### Probability and Statistics
-
-* Random Sampling
-* Probability Distributions
-* Monte Carlo Simulations
-* Statistical Estimation Techniques
+```
+  ○ Random Sampling
+  ○ Probability Distributions
+  ○ Monte Carlo Simulations
+  ○ Statistical Estimation Techniques
+```
 
 ### Dynamical Systems and Physics Simulations
-
-* Simple Harmonic Motion
-* Projectile Dynamics
-* Double Pendulum
-* Lorenz Attractor
-* N-Body Gravitational Simulation
-* Orbital Mechanics
+```
+  ○ Simple Harmonic Motion
+  ○ Projectile Dynamics
+  ○ Double Pendulum
+  ○ Lorenz Attractor
+  ○ N-Body Gravitational Simulation
+  ○ Orbital Mechanics
+```
 
 ### Fourier and Signal Analysis
-
-* Discrete Fourier Transform
-* Fast Fourier Transform
-* Signal Reconstruction
-* Spectral Analysis
+```
+  ○ Discrete Fourier Transform
+  ○ Fast Fourier Transform
+  ○ Signal Reconstruction
+  ○ Spectral Analysis
+```
 
 ---
 
-## Future Direction
+## `[ 07 ]` Future Direction
 
 The long-term vision is to evolve this repository into a broad computational framework capable of supporting:
 
-* Mathematical research
-* Scientific computing
-* Educational demonstrations
-* Numerical experimentation
-* Physics simulations
-* Computational modeling
+`mathematical research` · `scientific computing` · `educational demonstrations` · `numerical experimentation` · `physics simulations` · `computational modeling`
 
 while remaining accessible to students and useful to researchers.
 
 ---
 
-## Status
+## `[ 08 ]` Status
 
-This repository is currently under active development.
+> **◆ Active Development**
+>
+> This repository is currently under active development.
+> New numerical methods, simulations, visualizations, and documentation are continuously being added as the laboratory expands.
+> The project is intended to grow into a comprehensive collection of computational tools spanning mathematics, physics, and scientific computing.
 
-New numerical methods, simulations, visualizations, and documentation are continuously being added as the laboratory expands.
+---
 
-The project is intended to grow into a comprehensive collection of computational tools spanning mathematics, physics, and scientific computing.
+<div align="center">
+
+`Numerical Methods Laboratory` · `◆ Active Development`
+
+</div>
