@@ -46,6 +46,16 @@ The goal is to build a computational environment where the mathematics is never 
 
 ---
 
+
+### Visualization Tools
+```
+  ○ Row Reduction Step Visualizer
+  ○ Geometric Transformation Viewer
+  ○ Eigenspace Visualizer
+  ○ Matrix Heatmap and Structure Inspector
+```
+
+
 ## `[ 03 ]` Subject Areas
 
 ### ◈ Systems of Linear Equations
