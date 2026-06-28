@@ -1,10 +1,26 @@
-# Calculus
+<div align="center">
 
-> *Calculus forms the mathematical foundation of continuous systems. It allows us to model change, approximate functions, solve differential equations, and bridge mathematics with real-world physical phenomena.*
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
+│                         C A L C U L U S                             │
+│                                                                     │
+│          differentiation · integration · differential equations     │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+![Status](https://img.shields.io/badge/status-active%20development-amber?style=flat-square&color=e8a830)
+![Domain](https://img.shields.io/badge/domain-calculus-blue?style=flat-square&color=4fc4cf)
+![Type](https://img.shields.io/badge/type-computational%20module-grey?style=flat-square&color=2a3350)
+
+*Calculus forms the mathematical foundation of continuous systems. It allows us to model change, approximate functions, solve differential equations, and bridge mathematics with real-world physical phenomena.*
+
+</div>
 
 ---
 
-# Overview
+## `[ 01 ]` Overview
 
 The **Calculus** module provides numerical and visual implementations of the most fundamental concepts in computational calculus.
 
@@ -12,177 +28,182 @@ The objective is not only to perform calculations, but also to **develop intuiti
 
 The module aims to become a computational laboratory where users can:
 
-- Approximate arbitrary functions
-- Study convergence of infinite series
-- Compute derivatives and integrals numerically
-- Solve ordinary differential equations
-- Explore vector calculus
-- Perform symbolic approximations
-- Analyze error propagation
+| # | Capability |
+|---|------------|
+| → | Approximate arbitrary functions |
+| → | Study convergence of infinite series |
+| → | Compute derivatives and integrals numerically |
+| → | Solve ordinary differential equations |
+| → | Explore vector calculus |
+| → | Perform symbolic approximations |
+| → | Analyze error propagation |
 
 ---
 
-# Current Implementations
+## `[ 02 ]` Current Implementations
 
-## Taylor Series Approximation *(WIP)*
+### ◈ Taylor Series Approximation
 
 Approximate smooth functions using finite Taylor expansions.
 
 Features:
 
-- Arbitrary order expansion
-- Function approximation
-- Error visualization
-- Convergence animation
-- Radius of convergence demonstrations
+```
+  arbitrary order expansion  ·  function approximation       ·  error visualization
+  convergence animation      ·  radius of convergence demonstrations
+```
 
 ---
 
-# Planned Modules
+## `[ 03 ]` Planned Modules
 
-## Numerical Differentiation
+### ◈ Numerical Differentiation
 
 Approximate derivatives using finite differences.
 
-Planned methods include:
-
-- Forward Difference
-- Backward Difference
-- Central Difference
-- Higher-order finite difference schemes
+```
+  Forward Difference  ·  Backward Difference  ·  Central Difference
+  Higher-order finite difference schemes
+```
 
 ---
 
-## Numerical Integration
+### ◈ Numerical Integration
 
 Approximate definite integrals.
 
-Methods:
-
-- Rectangle Rule
-- Midpoint Rule
-- Trapezoidal Rule
-- Simpson's Rule
-- Adaptive Simpson's Method
-- Gaussian Quadrature
+```
+  Rectangle Rule      ·  Midpoint Rule         ·  Trapezoidal Rule
+  Simpson's Rule      ·  Adaptive Simpson's    ·  Gaussian Quadrature
+```
 
 ---
 
-## Fourier Analysis
+### ◈ Fourier Analysis
 
 Represent arbitrary periodic functions as sums of sinusoids.
 
-Topics include:
-
-- Fourier Series
-- Complex Fourier Series
-- Fourier Transform
-- Fast Fourier Transform (FFT)
-- Frequency-domain visualization
+```
+  Fourier Series           ·  Complex Fourier Series  ·  Fourier Transform
+  Fast Fourier Transform   ·  Frequency-domain visualization
+```
 
 ---
 
-## Differential Equations
+### ◈ Differential Equations
 
 Numerical solution of ordinary differential equations.
 
-Methods:
-
-- Euler Method
-- Improved Euler Method
-- Runge-Kutta (RK2/RK4)
-- Adaptive Runge-Kutta
-- System of Differential Equations
-
-Applications:
-
-- Population Models
-- Projectile Motion
-- Harmonic Oscillator
-- Orbital Dynamics
+| Type | Methods / Applications |
+|------|------------------------|
+| **Methods** | Euler · Improved Euler · Runge-Kutta (RK2/RK4) · Adaptive RK · Systems of ODEs |
+| **Applications** | Population Models · Projectile Motion · Harmonic Oscillator · Orbital Dynamics |
 
 ---
 
-## Optimization
+### ◈ Optimization
 
 Finding extrema of functions.
 
-Algorithms:
-
-- Gradient Descent
-- Newton Optimization
-- Golden Section Search
-- Nelder-Mead Method
+```
+  Gradient Descent  ·  Newton Optimization  ·  Golden Section Search  ·  Nelder-Mead
+```
 
 ---
 
-## Root Finding
+### ◈ Root Finding
 
 Numerically determine solutions to nonlinear equations.
 
-Methods:
-
-- Bisection
-- Newton-Raphson
-- Secant Method
-- Fixed Point Iteration
-- Brent's Method
+```
+  Bisection  ·  Newton-Raphson  ·  Secant Method  ·  Fixed Point Iteration  ·  Brent's Method
+```
 
 ---
 
-## Vector Calculus *(Future)*
+### ◈ Vector Calculus
 
 Interactive visualization of multivariable calculus.
 
-Topics:
-
-- Gradient
-- Divergence
-- Curl
-- Line Integrals
-- Surface Integrals
-- Conservative Vector Fields
+```
+  Gradient  ·  Divergence  ·  Curl  ·  Line Integrals
+  Surface Integrals  ·  Conservative Vector Fields
+```
 
 ---
 
-# Visualization Goals
+## `[ 04 ]` Visualization Goals
 
 Every algorithm should include an accompanying visualization wherever possible.
 
-Examples include:
-
-- Taylor approximation approaching the original function
-- Numerical derivative versus analytical derivative
-- Area approximation during numerical integration
-- Fourier reconstruction of signals
-- Differential equation solution trajectories
-- Error convergence plots
-
----
-
-# Long-Term Vision
-
-The Calculus module aims to become a comprehensive computational toolkit for both education and research.
-
-Rather than serving solely as a collection of algorithms, it is intended to function as an interactive environment where mathematical concepts can be explored visually, experimentally, and computationally.
-
-This module will ultimately integrate with the broader Numerical Methods Laboratory, supporting scientific computing across mathematics, engineering, physics, and data science.
+| Algorithm | Visualization |
+|-----------|---------------|
+| **Taylor Series** | Approximation converging toward the original function |
+| **Differentiation** | Numerical derivative vs analytical derivative |
+| **Integration** | Area approximation during numerical integration |
+| **Fourier Analysis** | Reconstruction of signals from frequency components |
+| **Differential Equations** | Solution trajectories in phase space |
+| **Error Analysis** | Convergence plots across step sizes |
 
 ---
 
-# Status
+## `[ 05 ]` Current Development
 
-| Module | Status |
-|----------|--------|
-| Taylor Series | 🚧 In Progress |
-| Numerical Differentiation | 📋 Planned |
-| Numerical Integration | 📋 Planned |
-| Fourier Analysis | 📋 Planned |
-| Differential Equations | 📋 Planned |
-| Optimization | 📋 Planned |
-| Root Finding | 📋 Planned |
-| Vector Calculus | 🔮 Future Development |
+### Taylor Series
+
+```
+  ● Taylor Series Approximation                                  [ WIP ]
+```
 
 ---
 
-*This module is under active development. Contributions, suggestions, and discussions are welcome.*
+## `[ 06 ]` Work In Progress
+
+### Numerical Methods
+```
+  ○ Numerical Differentiation
+  ○ Numerical Integration
+  ○ Root Finding
+  ○ Optimization
+```
+
+### Analysis
+```
+  ○ Fourier Analysis
+  ○ Differential Equations
+```
+
+### Future Development
+```
+  ○ Vector Calculus
+```
+
+---
+
+## `[ 07 ]` Future Direction
+
+The Calculus module aims to become a comprehensive computational toolkit for both education and research, functioning as an interactive environment where mathematical concepts can be explored visually, experimentally, and computationally.
+
+This module will ultimately integrate with the broader Numerical Methods Laboratory, supporting:
+
+`differentiation` · `integration` · `fourier analysis` · `differential equations` · `optimization` · `vector calculus`
+
+across mathematics, engineering, physics, and data science.
+
+---
+
+## `[ 08 ]` Status
+
+> **◆ Active Development**
+>
+> This module is under active development. New algorithms, visualizations, and mathematical
+> documentation are continuously being added as the module expands.
+> Contributions, suggestions, and discussions are welcome.
+
+---
+
+<div align="center">
+
+`Calculus` · `Numerical Methods Laboratory` · `◆ Active Development`
+
+</div>
