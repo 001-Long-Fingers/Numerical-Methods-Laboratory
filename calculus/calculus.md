@@ -10,10 +10,6 @@
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-![Status](https://img.shields.io/badge/status-active%20development-amber?style=flat-square&color=e8a830)
-![Domain](https://img.shields.io/badge/domain-calculus-blue?style=flat-square&color=4fc4cf)
-![Type](https://img.shields.io/badge/type-computational%20module-grey?style=flat-square&color=2a3350)
-
 *Calculus forms the mathematical foundation of continuous systems. It allows us to model change, approximate functions, solve differential equations, and bridge mathematics with real-world physical phenomena.*
 
 </div>
