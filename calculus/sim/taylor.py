@@ -28,7 +28,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 sys.path.insert(0, ".")
 from taylor_prototype import function_parser, function, taylor_series, compare, is_polynomial # pyright: ignore[reportMissingImports]
 
-# ── Palette & fonts ───────────────────────────────────────────────────────────
+# Palette & fonts
 
 RP = {
     "base":    "#0a0a0a",
@@ -60,7 +60,7 @@ GRAPH_T      = "#1d6fa4"   # blue  – Taylor polynomial
 GRAPH_XLINE  = "#f4a261"   # amber – vertical x marker
 
 
-# ── Helper: safe vectorised evaluation ───────────────────────────────────────
+# Helper: safe vectorised evaluation
 
 def _eval_safe(parsed, xs):
     """Evaluate parsed function over a numpy array, returning nan for failures."""
@@ -82,7 +82,7 @@ def _eval_taylor_safe(ts, xs):
     return ys
 
 
-# ── Main application ──────────────────────────────────────────────────────────
+# Main application
 
 class FunctionApp(tk.Tk):
 
@@ -98,7 +98,7 @@ class FunctionApp(tk.Tk):
 
         self._build_ui()
 
-    # ── UI construction ───────────────────────────────────────────────────────
+    # UI construction
 
     def _build_ui(self):
         # root is a single horizontal paned window
@@ -140,7 +140,7 @@ class FunctionApp(tk.Tk):
         tk.Label(frame, text="FUNCTION PARSER", font=FONT_TITLE,
                  fg=RP["pine"], bg=RP["surface"]).pack(anchor="w", pady=(0, 10))
 
-        # ── Function inputs ───────────────────────────────────────────────
+        # Function inputs
         self._section(frame, "FUNCTIONS").pack(fill=tk.X, pady=(6, 4))
 
         self._fn_vars = []
@@ -172,7 +172,7 @@ class FunctionApp(tk.Tk):
                            activebackground=RP["surface"],
                            activeforeground=RP["text"]).pack(side=tk.LEFT, padx=6)
 
-        # ── Taylor parameters ─────────────────────────────────────────────
+        # Taylor parameters
         self._section(frame, "TAYLOR PARAMETERS").pack(fill=tk.X, pady=(10, 4))
 
         self._n_terms_var = tk.StringVar(value="8")
@@ -186,7 +186,7 @@ class FunctionApp(tk.Tk):
                      fg=RP["foam"], bg=RP["surface"], width=8).pack(side=tk.LEFT)
             self._entry(row, textvariable=var, width=10).pack(side=tk.LEFT, padx=4)
 
-        # ── Evaluate at x ─────────────────────────────────────────────────
+        # Evaluate at x
         self._section(frame, "EVALUATE").pack(fill=tk.X, pady=(10, 4))
 
         row = tk.Frame(frame, bg=RP["surface"])
@@ -203,7 +203,7 @@ class FunctionApp(tk.Tk):
                   relief=tk.FLAT, bd=0, cursor="hand2",
                   command=self._compute).pack(pady=12, anchor="w")
 
-        # ── Results readout ───────────────────────────────────────────────
+        # Results readout
         self._section(frame, "RESULTS").pack(fill=tk.X, pady=(4, 4))
 
         self._result_text = tk.Text(frame, font=FONT_MONO_SM,
@@ -253,7 +253,7 @@ class FunctionApp(tk.Tk):
         self._draw_empty_graph()
         return frame
 
-    # ── Placeholder behaviour for entry fields ────────────────────────────────
+    # Placeholder behaviour for entry fields
 
     def _bind_placeholder(self, entry, var, hint):
         def on_focus_in(e):
@@ -267,7 +267,7 @@ class FunctionApp(tk.Tk):
         entry.bind("<FocusIn>",  on_focus_in)
         entry.bind("<FocusOut>", on_focus_out)
 
-    # ── Graph helpers ─────────────────────────────────────────────────────────
+    # Graph helpers
 
     def _draw_empty_graph(self):
         ax = self._ax
@@ -340,7 +340,7 @@ class FunctionApp(tk.Tk):
 
         self._canvas.draw()
 
-    # ── Compute ───────────────────────────────────────────────────────────────
+    # Compute
 
     def _write(self, text, tag="ok"):
         self._result_text.config(state=tk.NORMAL)
@@ -355,7 +355,7 @@ class FunctionApp(tk.Tk):
     def _compute(self):
         self._clear_results()
 
-        # ── read active function string ───────────────────────────────────
+        # read active function string
         idx      = self._active_fn.get() - 1
         fn_str   = self._fn_vars[idx].get().strip()
         hints    = ["sinx^2 + log(cosx)/2", "x^3 - 2*x + e^x", "sqrt(x^2 + 1)"]
@@ -363,7 +363,7 @@ class FunctionApp(tk.Tk):
             self._write("[!] Enter a function in the active slot.\n", "err")
             return
 
-        # ── parse ─────────────────────────────────────────────────────────
+        # parse
         try:
             parsed = function_parser(fn_str)
         except (SyntaxError, ValueError) as e:
@@ -373,7 +373,7 @@ class FunctionApp(tk.Tk):
         self._write("PARSED\n", "head")
         self._write(f"  expr  : {parsed.expression}\n", "ok")
 
-        # ── taylor parameters ─────────────────────────────────────────────
+        # taylor parameters
         try:
             n_terms = int(self._n_terms_var.get())
             center  = float(self._center_var.get())
@@ -381,7 +381,7 @@ class FunctionApp(tk.Tk):
             self._write("[!] Terms must be int, center must be float.\n", "err")
             return
 
-        # ── compute taylor series ─────────────────────────────────────────
+        # compute taylor series
         try:
             ts = taylor_series(parsed, n_terms, center)
         except Exception as e:
@@ -401,7 +401,7 @@ class FunctionApp(tk.Tk):
         for p in parts:
             self._write(f"    + {p}\n", "val")
 
-        # ── evaluate at x ─────────────────────────────────────────────────
+        # evaluate at x
         try:
             x_val = float(self._x_var.get())
         except ValueError:
@@ -438,14 +438,14 @@ class FunctionApp(tk.Tk):
         self._parsed = parsed
         self._ts     = ts
 
-        # ── draw graph ────────────────────────────────────────────────────
+        # draw graph
         try:
             self._draw_graph(parsed, ts, x_val, center)
         except Exception as e:
             self._write(f"\n[GRAPH ERROR]\n{e}\n", "err")
 
 
-# ── Entry point ───────────────────────────────────────────────────────────────
+# Entry point
 
 if __name__ == "__main__":
     app = FunctionApp()
