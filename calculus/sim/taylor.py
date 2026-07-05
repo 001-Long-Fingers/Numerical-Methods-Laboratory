@@ -18,11 +18,11 @@ import sys
 import math
 import tkinter as tk
 from tkinter import ttk
-import numpy as np
-import matplotlib
+import numpy as np # type: ignore
+import matplotlib # pyright: ignore[reportMissingModuleSource]
 matplotlib.use("TkAgg")
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.figure import Figure # pyright: ignore[reportMissingModuleSource]
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg # pyright: ignore[reportMissingModuleSource]
 
 # import our parser from the same directory
 sys.path.insert(0, ".")
