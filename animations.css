@@ -1,0 +1,350 @@
+/* ═══════════════════════════════════════════════════════════════
+   NUMERICAL METHODS LABORATORY · animations.css
+   ─────────────────────────────────────────────────────────────── */
+
+/* ── 1. Reduced-motion override (always first) ────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   2. KEYFRAMES
+   ══════════════════════════════════════════════════════════════ */
+
+/* Grid background slow drift */
+@keyframes grid-drift {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(40px, 40px); }
+}
+
+/* Hero title lines slide up + fade in */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Eyebrow line extends left-to-right */
+@keyframes line-grow {
+  from { width: 0; }
+  to   { width: 28px; }
+}
+
+/* Eyebrow text fades in after line */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Left-border quote slides in from left */
+@keyframes border-reveal {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Section label rule extends right */
+@keyframes rule-grow {
+  from { flex-basis: 0; opacity: 0; }
+  to   { flex-basis: auto; opacity: 1; }
+}
+
+/* Cards enter from below */
+@keyframes card-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Amber dot pulse (released item) */
+@keyframes dot-pulse {
+  0%, 100% { box-shadow: 0 0 4px 1px rgba(232, 168, 48, 0.5); }
+  50%       { box-shadow: 0 0 10px 4px rgba(232, 168, 48, 0.9); }
+}
+
+/* Scanline sweep across the hero (CRT feel) */
+@keyframes scanline {
+  0%   { top: -8%; }
+  100% { top: 108%; }
+}
+
+/* Footer fade up */
+@keyframes footer-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Status banner slide in from left */
+@keyframes banner-enter {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Future tag pop in */
+@keyframes tag-pop {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Flicker — very subtle, like a CRT warming up */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55%                           { opacity: 0.94; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   3. GRID BACKGROUND
+   ══════════════════════════════════════════════════════════════ */
+
+body::before {
+  animation: grid-drift 18s linear infinite;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   4. SCANLINE — single sweep on load, hero only
+   ══════════════════════════════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 8%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(232, 168, 48, 0.03) 50%,
+    transparent
+  );
+  pointer-events: none;
+  animation: scanline 1.4s cubic-bezier(0.4, 0, 0.6, 1) 0.2s 1 forwards;
+  top: -8%;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   5. HERO ENTRANCE
+   ══════════════════════════════════════════════════════════════ */
+
+.hero-eyebrow::before {
+  animation: line-grow 0.5s ease-out 0.1s both;
+}
+
+.hero-eyebrow {
+  animation: fade-in 0.5s ease-out 0.4s both;
+}
+
+.hero-title {
+  animation: slide-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both,
+             flicker 0.3s ease-out 0.9s 1 forwards;
+}
+
+.hero-subtitle {
+  animation: border-reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   6. SECTIONS — scroll-triggered via .is-visible class
+      (JS below adds this class via IntersectionObserver)
+   ══════════════════════════════════════════════════════════════ */
+
+.section,
+.dev-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section.is-visible,
+.dev-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section label rule */
+.section-label::after,
+.dev-section .section-label::after {
+  transition: flex-basis 0.6s ease, opacity 0.6s ease;
+  flex-basis: 0;
+  opacity: 0;
+}
+
+.section.is-visible .section-label::after,
+.dev-section.is-visible .section-label::after {
+  flex-basis: auto;
+  opacity: 1;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   7. AUDIENCE CARDS — staggered rise on section reveal
+   ══════════════════════════════════════════════════════════════ */
+
+.audience-card {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.section.is-visible .audience-card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.05s; }
+.section.is-visible .audience-card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+.section.is-visible .audience-card:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   8. ARCH CARDS
+   ══════════════════════════════════════════════════════════════ */
+
+.arch-card {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.section.is-visible .arch-card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.section.is-visible .arch-card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   9. CURRENT-CARD (released item) — amber dot pulse
+   ══════════════════════════════════════════════════════════════ */
+
+.current-card {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.5s ease 0.15s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.section.is-visible .current-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.dot-done {
+  animation: dot-pulse 2.4s ease-in-out 1.2s infinite;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   10. DEV CARDS — staggered cascade
+   ══════════════════════════════════════════════════════════════ */
+
+.dev-card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dev-section.is-visible .dev-card:nth-child(1)  { opacity: 1; transform: translateY(0); transition-delay: 0.04s; }
+.dev-section.is-visible .dev-card:nth-child(2)  { opacity: 1; transform: translateY(0); transition-delay: 0.09s; }
+.dev-section.is-visible .dev-card:nth-child(3)  { opacity: 1; transform: translateY(0); transition-delay: 0.14s; }
+.dev-section.is-visible .dev-card:nth-child(4)  { opacity: 1; transform: translateY(0); transition-delay: 0.19s; }
+.dev-section.is-visible .dev-card:nth-child(5)  { opacity: 1; transform: translateY(0); transition-delay: 0.24s; }
+.dev-section.is-visible .dev-card:nth-child(6)  { opacity: 1; transform: translateY(0); transition-delay: 0.29s; }
+.dev-section.is-visible .dev-card:nth-child(7)  { opacity: 1; transform: translateY(0); transition-delay: 0.34s; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   11. FUTURE TAGS — staggered pop
+   ══════════════════════════════════════════════════════════════ */
+
+.future-tag {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.section.is-visible .future-tag:nth-child(1) { opacity: 1; transform: scale(1); transition-delay: 0.05s; }
+.section.is-visible .future-tag:nth-child(2) { opacity: 1; transform: scale(1); transition-delay: 0.10s; }
+.section.is-visible .future-tag:nth-child(3) { opacity: 1; transform: scale(1); transition-delay: 0.15s; }
+.section.is-visible .future-tag:nth-child(4) { opacity: 1; transform: scale(1); transition-delay: 0.20s; }
+.section.is-visible .future-tag:nth-child(5) { opacity: 1; transform: scale(1); transition-delay: 0.25s; }
+.section.is-visible .future-tag:nth-child(6) { opacity: 1; transform: scale(1); transition-delay: 0.30s; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   12. STATUS BANNER
+   ══════════════════════════════════════════════════════════════ */
+
+.status-banner {
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.status-banner.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   13. FOOTER
+   ══════════════════════════════════════════════════════════════ */
+
+footer {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+footer.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   14. HOVER MICRO-INTERACTIONS
+   ══════════════════════════════════════════════════════════════ */
+
+/* Method items — row highlight on hover */
+.method-item {
+  transition: color 0.18s ease, padding-left 0.18s ease;
+}
+
+.method-item:hover {
+  color: var(--text);
+  padding-left: 6px;
+}
+
+/* Arch card badge glow on card hover */
+.arch-card:hover .arch-card-badge {
+  background: rgba(79, 196, 207, 0.14);
+  transition: background 0.2s ease;
+}
+
+/* Current card border shimmer on hover */
+.current-card {
+  transition:
+    opacity 0.5s ease 0.15s,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.15s,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.current-card:hover {
+  border-color: var(--amber);
+  background: rgba(232, 168, 48, 0.18);
+}
+
+/* Future tags — lift on hover */
+.future-tag:hover {
+  color: var(--amber);
+  border-color: var(--amber-dim);
+  transform: translateY(-2px);
+  transition: color 0.18s, border-color 0.18s, transform 0.18s;
+}
