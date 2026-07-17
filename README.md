@@ -11,7 +11,7 @@
 ```
 *A virtual laboratory for numerical analysis, scientific computing, mathematical experimentation, and physics simulations.*
 
-https://001-long-fingers.github.io/Numerical-Methods-Laboratory/
+Website for this project: https://001-long-fingers.github.io/Numerical-Methods-Laboratory/
 
 </div>
 
