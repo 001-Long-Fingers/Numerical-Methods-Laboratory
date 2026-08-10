@@ -1,14 +1,7 @@
 <div align="center">
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                                                                     │
-│          N U M E R I C A L   M E T H O D S   L A B O R A T O R Y  │
-│                                                                     │
-│     numerical analysis · scientific computing · physics sims        │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
+<img width="1920" height="1080" alt="Screenshot 2026-08-10 201029" src="https://github.com/user-attachments/assets/e9045664-0f6e-47ee-9d4d-a5e45112c48c" />
+
 *A virtual laboratory for numerical analysis, scientific computing, mathematical experimentation, and physics simulations.*
 
 </div>
