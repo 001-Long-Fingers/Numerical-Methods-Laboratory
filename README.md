@@ -113,6 +113,8 @@ The repository distinguishes between:
 
 ```
   ● Gaussian Elimination                                         [ RELEASED ]
+  ● Taylors Theorem                                              [ RELEASED ]
+  * Function Grapher                                             [ RELEASED ]
 ```
 
 ---
