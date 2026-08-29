@@ -38,12 +38,6 @@ The module aims to become a computational laboratory where users can:
 
 ## `[ 02 ]` Current Implementations
 
-*No modules have reached completed status yet — all current work is listed under Work In Progress below.*
-
----
-
-## `[ 03 ]` Planned Modules
-
 ### ◈ Random Walk Model
 
 Simulate discrete and continuous stochastic walks.
@@ -54,6 +48,10 @@ Simulate discrete and continuous stochastic walks.
 ```
 
 ---
+
+---
+
+## `[ 03 ]` Planned Modules
 
 ### ◈ Urn Model
 
