@@ -1,14 +1,9 @@
-<div align="center">
+<div align="Left">
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                                                                     │
-│                     R A N D O M   W A L K                           │
-│                                                                     │
-│          derivation · statistics · diffusion limit · workflow        │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
+# Random Walk
+
+<img width="706" height="462" alt="image" src="https://github.com/user-attachments/assets/48a704ba-33fc-4a14-85ad-dd0097a5d298" />
+
 
 *A one-dimensional random walk models a particle that takes discrete, independent ±1 steps. Despite its simplicity, it is the foundation for diffusion, Brownian motion, and much of stochastic process theory.*
 
