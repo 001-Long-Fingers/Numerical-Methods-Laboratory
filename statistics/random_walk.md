@@ -1,9 +1,7 @@
 <div align="Left">
-
-# Random Walk
-
-<img width="706" height="462" alt="image" src="https://github.com/user-attachments/assets/48a704ba-33fc-4a14-85ad-dd0097a5d298" />
-
+  
+## Random Walk
+<img width="706" height="462" alt="image" src="https://github.com/user-attachments/assets/a68e0c7b-bcfa-429a-a70d-c4e0c6c28fcd" />
 
 *A one-dimensional random walk models a particle that takes discrete, independent ±1 steps. Despite its simplicity, it is the foundation for diffusion, Brownian motion, and much of stochastic process theory.*
 
@@ -47,7 +45,7 @@ E[X_i^2] = p(1)^2 + q(-1)^2 = 1
 $$
 
 $$
-\operatorname{Var}(X_i) = E[X_i^2] - \big(E[X_i]\big)^2 = 1 - (2p-1)^2 = 4pq
+\text{Var}(X_i) = E[X_i^2] - \big(E[X_i]\big)^2 = 1 - (2p-1)^2 = 4pq
 $$
 
 ### After $N$ steps
@@ -59,13 +57,13 @@ E[S_N] = N(2p - 1)
 $$
 
 $$
-\operatorname{Var}(S_N) = N \cdot 4pq
+\text{Var}(S_N) = N \cdot 4pq
 $$
 
 For the **symmetric walk** ($p = q = \tfrac12$):
 
 $$
-E[S_N] = 0, \qquad \operatorname{Var}(S_N) = N
+E[S_N] = 0, \qquad \text{Var}(S_N) = N
 $$
 
 so the *typical* displacement grows like $\sqrt{N}$ — the signature scaling of diffusive motion, not $N$ as it would for ballistic motion.
